@@ -487,7 +487,37 @@ IEEEtran, journal, \LaTeX, paper, template.
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
+\section{Parameters}
+
+\begin{equation}
+\label{semesters}
+S = \mbox{Number of semesters}
+\end{equation}
+
+\begin{equation}
+\label{courses}
+C = \mbox{Number of courses}
+\end{equation}
+
+\section{Decision variables}
+
+\begin{equation}
+\label{takeCourse}
+x_{ij} = \mbox{Take course i on semester j}
+\end{equation}
+
+\begin{equation}
+\label{i}
+i \in [1,C]
+\end{equation}
+
+\begin{equation}
+\label{j}
+j \in [1,S]
+\end{equation}
+
 \section{Objective function}
+
 \begin{equation}
 \label{objectiveFunction}
 n = |N| = \displaystyle\sum_{j} max(x_{ij})
