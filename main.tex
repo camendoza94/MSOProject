@@ -424,8 +424,8 @@
 
 
 % The paper headers
-\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
-{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
 % The only time the second header will appear is for the odd numbered pages
 % after the title page when using the twoside option.
 % 
@@ -518,6 +518,25 @@ n = \displaystyle\sum_{j} max(x_{ij})
 \begin{equation}
 \label{maxCredits}
 \forall j, \displaystyle\sum_{i=1}^{C} x_{ij} * \mathrm{credits}(i) \leq 25
+\end{equation}
+
+\begin{equation}
+\label{correq}
+%\forall j, \displaystyle\sum_{i=1}^{C} x_{ij} * \mathrm{credits}(i) \leq 25
+Correq: if \quad   x_{ij} =1\qquad \Rightarrow \qquad \forall a | M_{ai} =2
+\end{equation}
+
+
+\begin{equation}
+\label{prereq}
+%\forall j, \displaystyle\sum_{i=1}^{C} x_{ij} * \mathrm{credits}(i) \leq 25
+Prereq: if \quad   x_{ij} =1\qquad \Rightarrow \qquad \forall a | M_{ai} =1
+\end{equation}
+
+
+\begin{equation}
+\label{constraint2}
+\displaystyle\sum_{k=1}^{j-1} x_{ak} = 1
 \end{equation}
 
 % An example of a floating figure using the graphicx package.
