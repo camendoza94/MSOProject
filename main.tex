@@ -522,21 +522,12 @@ n = \displaystyle\sum_{j} max(x_{ij})
 
 \begin{equation}
 \label{correq}
-%\forall j, \displaystyle\sum_{i=1}^{C} x_{ij} * \mathrm{credits}(i) \leq 25
-Correq: if \quad   x_{ij} =1\qquad \Rightarrow \qquad \forall a | M_{ai} =2
+Coreq: if \quad   x_{ij} =1\qquad \Rightarrow \qquad \forall a | M_{ai} = 2; x_{aj} = 1
 \end{equation}
-
 
 \begin{equation}
 \label{prereq}
-%\forall j, \displaystyle\sum_{i=1}^{C} x_{ij} * \mathrm{credits}(i) \leq 25
-Prereq: if \quad   x_{ij} =1\qquad \Rightarrow \qquad \forall a | M_{ai} =1
-\end{equation}
-
-
-\begin{equation}
-\label{constraint2}
-\displaystyle\sum_{k=1}^{j-1} x_{ak} = 1
+Prereq: if \quad   x_{ij} =1\qquad \Rightarrow \qquad \forall a | M_{ai} = 1; \sum_{k=1}^{j-1} x_{ak} = 1
 \end{equation}
 
 % An example of a floating figure using the graphicx package.
@@ -592,7 +583,7 @@ Test case for Physics undergraduate program
 
 
 \section*{Acknowledgment}
-The authors would like to thank the professor Yezid for his counseling in the objective function definition. \\ 
+The authors would like to thank the professor Yezid Donoso for his counseling in the objective function definition. \\ 
 
 % Can use something like this to put references on a page
 % by themselves when using endfloat and the captionsoff option.
