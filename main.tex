@@ -478,8 +478,14 @@ In the following table we describe the conventions we will use during the articl
 		\textbf{Symbol} & \multicolumn{1}{c|}{\textbf{Meaning}} \\ \hline
 		$S$ 			& Number of semesters                   \\ \hline
 		$C$				& Number of courses                     \\ \hline
+    $M_{ij}   & Adjacency matrix between courses      \\  \hline
 	\end{tabular}
 \end{table}
+
+Where: \\
+$M_{ij} = 0$ if course $i$ has no relation with course $j$ \\
+$M_{ij} = 1$ if course $i$ is prerequisite of course $j$  \\
+$M_{ij} = 2$ if course $i$ is corequisite of course $j$   \\
 
 \section{Decision Variable}
 The decision variable we will use is:
