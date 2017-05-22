@@ -32,7 +32,7 @@
 
 \begin{abstract}
 %\boldmath
-This article presents an optimization application that helps undergraduate students of Universidad de los Andes (Colombia) that are enrolled in a double major or minor, to minimize the number of semesters required for their graduation. The application offers a detailed plan, semester by semester, with all the courses suggested to sign up for. It is also an iterative tool that takes into account the classes that the student has already approved. This article consists in the final project for the class \textit{Modelling, Simulation \& Optimization} (2017-10).
+This article presents an optimization application that helps undergraduate students of Universidad de los Andes (Colombia) that are enrolled in a double major or minor, to minimize the number of semesters required for their graduation. The application offers a detailed plan, semester by semester, with all the courses suggested to sign up for. It is also an iterative tool that takes into account the classes that the student has already approved. This article consists in the final project for the class \textit{Modeling, Simulation \& Optimization} (2017-10).
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -144,7 +144,59 @@ Finally, as for the data used in the application, we created a scrapper that goe
 
 \section{Simulation}
 
-TODO...\\
+In order to simulate the performance of our optimizer we decided to implement a real API reachable through HTTP REST requests. Using a simulator that varies the parameters such as programs and maximum number of credits we simulate load on our optimizer component.\\
+
+The format of the request includes the first program, the second program and the maximum number of credits the student want to take each semester. Our optimizer will receive the request, access the database of courses, find all that belong to the programs specified and then make a merged list of them. After that, it will again access the database for every course in the list and find all its requisites and corequisites, in order to build the matrix representing the graph that the optimizer will use as input data. \\
+
+When the optimizer finishes the optimization, it will return the optimized result to the client via an HTTP response. Our Javascript simulator send requests to the API 100 times for each possible combination, each changing the parameters and measuring response time of the systems,  minimum number of semesters possible and credits seen last semester for the selected optimization preferences. \\
+
+On each iteration, our simulator collect all the results of the request and finally iterations are finished, it will average the response time for every combination and output data in CSV format for easy access and visualization in other programs.\\
+
+We obtained the following results for semesters vs credits:\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/fissis}
+    \label{fis_sis}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/fisind}
+
+    \label{fis_ind}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/indsis}
+
+    \label{ind_sis}
+\end{figure}
+
+\newpage 
+
+We obtained the following results for semesters vs average time of response:\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/fissis2}
+    \label{fis_sis_t}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/fisind2}
+
+    \label{fis_ind_t}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/indsis2}
+
+    \label{ind_sis_t}
+\end{figure}
 
 \section{Results}
 
