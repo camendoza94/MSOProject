@@ -1,472 +1,58 @@
+%% PACKAGES
 
-%% bare_jrnl.tex
-%% V1.3
-%% 2007/01/11
-%% by Michael Shell
-%% see http://www.michaelshell.org/
-%% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.7 or later) with an IEEE journal paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
-%% and
-%% http://www.ieee.org/
-
-
-
-% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
-% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. IEEE's font choices can trigger bugs that do  ***
-% *** not appear when using other class files.                            ***
-% The testflow support page is at:
-% http://www.michaelshell.org/tex/testflow/
-
-
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
-%% User assumes all risk.
-%% In no event shall IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%
-%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
-%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
-%%*************************************************************************
-
-% Note that the a4paper option is mainly intended so that authors in
-% countries using A4 can easily print to A4 and see how their papers will
-% look in print - the typesetting of the document will not typically be
-% affected with changes in paper size (but the bottom and side margins will).
-% Use the testflow package mentioned above to verify correct handling of
-% both paper sizes by the user's LaTeX system.
-%
-% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
-% should be used if it is desired that the figures are to be displayed in
-% draft mode.
-%
 \documentclass[journal]{IEEEtran}
 \usepackage{blindtext}
 \usepackage{graphicx}
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
-%\usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
-% not currently provide for hyperlinked citations.
-% The latest version can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
-
-
-% *** GRAPHICS RELATED PACKAGES ***
-%
-\ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-\else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-  % \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
-\fi
-% graphicx was written by David Carlisle and Sebastian Rahtz. It is
-% required if you want graphics, photos, etc. graphicx.sty is already
-% installed on most LaTeX systems. The latest version and documentation can
-% be obtained at: 
-% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
-% Another good source of documentation is "Using Imported Graphics in
-% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
-% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
-%
-% latex, and pdflatex in dvi mode, support graphics in encapsulated
-% postscript (.eps) format. pdflatex in pdf mode supports graphics
-% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
-% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
-% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
-% which can result in "jaggedy"/blurry rendering of lines and letters as
-% well as large increases in file sizes.
-%
-% You can find documentation about the pdfTeX application at:
-% http://www.tug.org/applications/pdftex
-
-
-
-
-
-% *** MATH PACKAGES ***
-%
-%\usepackage[cmex10]{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics. If using
-% it, be sure to load this package with the cmex10 option to ensure that
-% only type 1 fonts will utilized at all point sizes. Without this option,
-% it is possible that some math symbols, particularly those within
-% footnotes, will be rendered in bitmap form which will result in a
-% document that can not be IEEE Xplore compliant!
-%
-% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
-%\interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
-
-
-
-
+\usepackage{cite}
+\usepackage[cmex10]{amsmath}
+\usepackage{url}
 
 % *** SPECIALIZED LIST PACKAGES ***
-%
 %\usepackage{algorithmic}
-% algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
 % http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
-% There is also a support site at:
 % http://algorithms.berlios.de/index.html
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
-
-
-
-
 % *** ALIGNMENT PACKAGES ***
-%
 %\usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/required/tools/
-
-
-%\usepackage{mdwmath}
-%\usepackage{mdwtab}
-% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
-% especially mdwmath.sty and mdwtab.sty which are used to format equations
-% and tables, respectively. The MDWtools set is already installed on most
-% LaTeX systems. The lastest version and documentation is available at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
-
-
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
-
-
-%\usepackage{eqparbox}
-% Also of notable interest is Scott Pakin's eqparbox package for creating
-% (automatically sized) equal width boxes - aka "natural width parboxes".
-% Available at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
-
-
-
-
-
-% *** SUBFIGURE PACKAGES ***
-%\usepackage[tight,footnotesize]{subfigure}
-% subfigure.sty was written by Steven Douglas Cochran. This package makes it
-% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
-% work, it is a good idea to load it with the tight package option to reduce
-% the amount of white space around the subfigures. subfigure.sty is already
-% installed on most LaTeX systems. The latest version and documentation can
-% be obtained at:
-% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
-% subfigure.sty has been superceeded by subfig.sty.
-
-
-
-%\usepackage[caption=false]{caption}
-%\usepackage[font=footnotesize]{subfig}
-% subfig.sty, also written by Steven Douglas Cochran, is the modern
-% replacement for subfigure.sty. However, subfig.sty requires and
-% automatically loads Axel Sommerfeldt's caption.sty which will override
-% IEEEtran.cls handling of captions and this will result in nonIEEE style
-% figure/table captions. To prevent this problem, be sure and preload
-% caption.sty with its "caption=false" package option. This is will preserve
-% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
-% (recommended due to many improvements over 1.2) of subfig.sty supports
-% the caption=false option directly:
-%\usepackage[caption=false,font=footnotesize]{subfig}
-%
-% The latest version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
-% The latest version and documentation of caption.sty can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
-
-
-
-
-% *** FLOAT PACKAGES ***
-%
-%\usepackage{fixltx2e}
-% fixltx2e, the successor to the earlier fix2col.sty, was written by
-% Frank Mittelbach and David Carlisle. This package corrects a few problems
-% in the LaTeX2e kernel, the most notable of which is that in current
-% LaTeX2e releases, the ordering of single and double column floats is not
-% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
-% single column figure to be placed prior to an earlier double column
-% figure. The latest version and documentation can be found at:
-% http://www.ctan.org/tex-archive/macros/latex/base/
-
-
-
-%\usepackage{stfloats}
-% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
-% the ability to do double column floats at the bottom of the page as well
-% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
-% LaTeX2e). It also provides a command:
-%\fnbelowfloat
-% to enable the placement of footnotes below bottom floats (the standard
-% LaTeX2e kernel puts them above bottom floats). This is an invasive package
-% which rewrites many portions of the LaTeX2e float routines. It may not work
-% with other packages that modify the LaTeX2e float routines. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
-% Documentation is contained in the stfloats.sty comments as well as in the
-% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
-% does not allow \baselineskip to stretch. Authors submitting work to the
-% IEEE should note that IEEE rarely uses double column equations and
-% that authors should try to avoid such use. Do not be tempted to use the
-% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
-% not format its papers in such ways.
-
-
-%\ifCLASSOPTIONcaptionsoff
-%  \usepackage[nomarkers]{endfloat}
-% \let\MYoriglatexcaption\caption
-% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
-%\fi
-% endfloat.sty was written by James Darrell McCauley and Jeff Goldberg.
-% This package may be useful when used in conjunction with IEEEtran.cls'
-% captionsoff option. Some IEEE journals/societies require that submissions
-% have lists of figures/tables at the end of the paper and that
-% figures/tables without any captions are placed on a page by themselves at
-% the end of the document. If needed, the draftcls IEEEtran class option or
-% \CLASSINPUTbaselinestretch interface can be used to increase the line
-% spacing as well. Be sure and use the nomarkers option of endfloat to
-% prevent endfloat from "marking" where the figures would have been placed
-% in the text. The two hack lines of code above are a slight modification of
-% that suggested by in the endfloat docs (section 8.3.1) to ensure that
-% the full captions always appear in the list of figures/tables - even if
-% the user used the short optional argument of \caption[]{}.
-% IEEE papers do not typically make use of \caption[]'s optional argument,
-% so this should not be an issue. A similar trick can be used to disable
-% captions of packages such as subfig.sty that lack options to turn off
-% the subcaptions:
-% For subfig.sty:
-% \let\MYorigsubfloat\subfloat
-% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
-% For subfigure.sty:
-% \let\MYorigsubfigure\subfigure
-% \renewcommand{\subfigure}[2][\relax]{\MYorigsubfigure[]{#2}}
-% However, the above trick will not work if both optional arguments of
-% the \subfloat/subfig command are used. Furthermore, there needs to be a
-% description of each subfigure *somewhere* and endfloat does not add
-% subfigure captions to its list of figures. Thus, the best approach is to
-% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
-% and instead reference/explain all the subfigures within the main caption.
-% The latest version of endfloat.sty and its documentation can obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/endfloat/
-%
-% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
-% later in the document, say, to conditionally put the References on a 
-% page by themselves.
-
-
-
-
-
-% *** PDF, URL AND HYPERLINK PACKAGES ***
-%
-%\usepackage{url}
-% url.sty was written by Donald Arseneau. It provides better support for
-% handling and breaking URLs. url.sty is already installed on most LaTeX
-% systems. The latest version can be obtained at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
-% Read the url.sty source comments for usage information. Basically,
-% \url{my_url_here}.
-
-
-
-
-
-% *** Do not adjust lengths that control margins, column widths, etc. ***
-% *** Do not use packages that alter fonts (such as pslatex).         ***
-% There should be no need to do such things with IEEEtran.cls V1.6 and later.
-% (Unless specifically asked to do so by the journal or conference you plan
-% to submit to, of course. )
-
 
 % correct bad hyphenation here
-\hyphenation{op-tical net-works semi-conduc-tor}
+\hyphenation{net-works semi-conduc-tor}
+
 \begin{document}
-%
-% paper title
-% can use linebreaks \\ within to get better formatting as desired
-\title{Modeling, Simulation and Optimization}
-%
-%
-% author names and IEEE memberships
-% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
-% a structure at a ~ so this keeps an author's name from being broken across
-% two lines.
-% use \thanks{} to gain access to the first footnote area
-% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
-% was not built to handle multiple paragraphs
-%
+\title{Academic Planner}
 
-\author{Delgado, David\ \texttt{dm.delgado10@uniandes.edu.co}\\ \and 
-		Hernandez, Sof\'ia\ \texttt{ls.hernandez10@uniandes.edu.co}\\ \and
-		Mendoza, Camilo\ \texttt{ca.mendoza968@uniandes.edu.co}\\ \and
-		Murillo, Juan\ \texttt{jg.murillo10@uniandes.edu.co}\\ \and
-  		Remolina-Gutiérrez, Mar\'ia\ \texttt{mc.remolina197@uniandes.edu.co} }
+\author{
+    Delgado Ruiz, David Mauricio \texttt{dm.delgado10@uniandes.edu.co}\\ \and 
+	Hernandez Cantero, Laura Sof\'ia\ \texttt{ls.hernandez10@uniandes.edu.co}\\ \and
+	Mendoza Arrieta, Camilo Andres \texttt{ca.mendoza968@uniandes.edu.co}\\ \and
+	Murillo Castillo, Juan Guillermo\ \texttt{jg.murillo10@uniandes.edu.co}\\ \and
+  	Remolina-Guti\'errez, Maria Camila \texttt{mc.remolina197@uniandes.edu.co} 
+}
 
-% note the % following the last \IEEEmembership and also \thanks - 
-% these prevent an unwanted space from occurring between the last author name
-% and the end of the author line. i.e., if you had this:
-% 
-% \author{....lastname \thanks{...} \thanks{...} }
-%                     ^------------^------------^----Do not want these spaces!
-%
-% a space would be appended to the last name and could cause every name on that
-% line to be shifted left slightly. This is one of those "LaTeX things". For
-% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
-% "AB" then you have to do: "\textbf{A}\textbf{B}"
-% \thanks is no different in this regard, so shield the last } of each \thanks
-% that ends a line with a % and do not let a space in before the next \thanks.
-% Spaces after \IEEEmembership other than the last one are OK (and needed) as
-% you are supposed to have spaces between the names. For what it is worth,
-% this is a minor point as most people would not even notice if the said evil
-% space somehow managed to creep in.
-
-
-
-% The paper headers
-%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
-%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
-% The only time the second header will appear is for the odd numbered pages
-% after the title page when using the twoside option.
-% 
-% *** Note that you probably will NOT want to include the author's ***
-% *** name in the headers of peer review papers.                   ***
-% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
-% you desire.
-
-
-
-
-% If you want to put a publisher's ID mark on the page you can do it like
-% this:
-%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
-% Remember, if you use this you must call \IEEEpubidadjcol in the second
-% column for its text to clear the IEEEpubid mark.
-
-% make the title area
 \maketitle
-
 
 \begin{abstract}
 %\boldmath
-This preview of an article displays the mathematical model that will describe out problem. We want to optimize the number of semesters a student with double major at Universidad de los Andes (Colombia) needs to pay in order to graduate. 
+This article presents an optimization application that helps undergraduate students of Universidad de los Andes (Colombia) that are enrolled in a double major or minor, to minimize the number of semesters required for their graduation. The application offers a detailed plan, semester by semester, with all the courses suggested to sign up for. It is also an iterative tool that takes into account the classes that the student has already approved. This article consists in the final project for the class \textit{Modelling, Simulation \& Optimization} (2017-10).
 \end{abstract}
-% IEEEtran.cls defaults to using nonbold math in the Abstract.
-% This preserves the distinction between vectors and scalars. However,
-% if the journal you are submitting to favors bold math in the abstract,
-% then you can use LaTeX's standard command \boldmath at the very start
-% of the abstract to achieve this. Many IEEE journals frown on math
-% in the abstract anyway.
 
-% Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-	mathematical model, semester planning optimization
+	optimization, semestral planning, graphs
 \end{IEEEkeywords}
 
 \section{Introduction}
-The main objective of this article is to propose a mathematical model that solves the problem of planning the academic schedule for double program students of the University of the Andes. Thus, the mathematical model will optimize the number of semesters in which any undergraduate student would study the courses of their two undergraduate programs.\\
+The problem of academic planning by semester or quarters is something each undergraduate student has to approach when enrolled in college. However, in the majority of the cases, each major offers a suggested flow of courses per period so that the degree can be obtained in the time the university claims. \\
 
-\section{Parameters}
+Nonetheless, most universities offer the possibility to perform a double major or minor during the undergraduate studies. Then, the task of planning each academic period becomes non trivial and deploys a big number of combinations between majors and minors. For this reason, and taking into account that most of the students and parents want to minimize the time and money spent for college tuition, we want to present an optimization tool that solves this problem specially for major/minor merges. \\
+
+All of us, the authors, are undergraduate students at Universidad de los Andes (Uniandes) in Bogot\'a, Colombia. In this university, by 2015 the 30.2\% of the students were enrolled in a double major and 21\% in a minor \cite{boletinuniandes}. This means that a great portion of our school has to deal with the problem stated above. For this reason we chose our university to base the prototype of our application and to test the results of our solution. \\
+
+\section{Problem solution}
+
+In order to approach this problem, we started with a mathematical formulation followed by an implementation in the software GAMS. Then we created an interactive frontend website that allows to set the restrictions. Finally we run GAMS and other technologies in the backend to join all the application together. The details for each part are displayed in the next subsections. \\
+
+\subsection{Mathematical formulation}
+
+\subsubsection{Parameters}
 In the following table we describe the conventions we will use during the article. \\
 
 \begin{table}[h!]
@@ -478,145 +64,162 @@ In the following table we describe the conventions we will use during the articl
 		\textbf{Symbol} & \multicolumn{1}{c|}{\textbf{Meaning}} \\ \hline
 		$S$ 			& Number of semesters                   \\ \hline
 		$C$				& Number of courses                     \\ \hline
-    $M_{ij}   & Adjacency matrix between courses      \\  \hline
+        $M_{ik}$        & Adjacency matrix between courses      \\ \hline
 	\end{tabular}
 \end{table}
 
-Where: \\
-$M_{ij} = 0$ if course $i$ has no relation with course $j$ \\
-$M_{ij} = 1$ if course $i$ is prerequisite of course $j$  \\
-$M_{ij} = 2$ if course $i$ is corequisite of course $j$   \\
+The matrix M contains the information of the merge of the all majors and minors that the student has. It is defined as:
 
-\section{Decision Variable}
+\[ M_{ik} = 
+    \begin{cases} 
+      0 & \textrm{if course $i$ has no relation with course $k$} \\          
+      1 & \textrm{if course $i$ is prerequisite of course $k$} \\   
+      2 & \textrm{if course $i$ is corequisite of course $k$} \\  
+    \end{cases}
+\]\\
+
+Where $i,k \in [1,C]$.\\
+
+\subsubsection{Decision Variable}
 The decision variable we will use is:
 
-\begin{equation}
-\label{takeCourse}
-x_{ij} = \mbox{Take course i on semester j}
-\end{equation}
+\[ x_{ij} = 
+    \begin{cases} 
+      1 & \textrm{if I take course $i$ in semester $j$} \\   
+      0 & \textrm{the rest of the cases} \\  
+    \end{cases}
+\]
 
-Where: 
+Where $i \in [1,C]$ and $j \in [1,S]$. \\
 
-\begin{equation}
-\label{i}
-i \in [1,C]
-\end{equation}
-
-\begin{equation}
-\label{j}
-j \in [1,S]
-\end{equation}
-
-\section{Objective function}
+\subsubsection{Objective function}
+The variable that we want to minimize is the number of semesters $n$:
 
 \begin{equation}
 \label{objectiveFunction}
-n = \displaystyle\sum_{j} max(x_{ij})
+n = \displaystyle\sum_{i}\sum_{j} j^5 x_{ij}
 \end{equation}
 
-\section{Constraints}
+\subsubsection{Constraints}
+The mathematical formulation takes into account 4 basic constrains to simplify the problem:\\
 
-\begin{equation}
-\label{noRepeats}
-\forall i, \displaystyle\sum_{j=1}^{S} x_{ij} = 1
-\end{equation}
+\begin{itemize}
+    \item A course is approved only once.
+    
+    \begin{equation}
+        \label{noRepeats}
+        \forall i, \quad \displaystyle\sum_{j=1}^{S} x_{ij} = 1
+    \end{equation}
+    
+    \item The student sets a maximum of credits ($c_{max}$) by semester, that cannot be exceeded.
+    
+    \begin{equation}
+        \label{maxCredits}
+        \forall j, \quad \displaystyle\sum_{i=1}^{C} x_{ij} * \mathrm{credits}(i) \leq c_{max}
+    \end{equation}
+    
+    \item If course A is a prerequisite of another course B, A has to be in a semester previous to B's.
+    
+    \begin{equation}
+        \label{prereq}
+        \textrm{if} \quad x_{ij} =1 \quad \Rightarrow \quad \forall a | M_{ai} = 1; \sum_{k=1}^{j-1} x_{ak} = 1
+    \end{equation}
+    
+    \item If course A is a corequisite of another course B, A has to be in a semester previous or equal to B's.
+    
+    \begin{equation}
+        \label{correq}
+        \textrm{if} \quad x_{ij} =1 \quad \Rightarrow \quad \forall a | M_{ai} = 2; x_{aj} = 1
+    \end{equation}
+    
+\end{itemize}
 
-\begin{equation}
-\label{maxCredits}
-\forall j, \displaystyle\sum_{i=1}^{C} x_{ij} * \mathrm{credits}(i) \leq 25
-\end{equation}
+\subsection{Computational implementation}
 
-\begin{equation}
-\label{correq}
-Coreq: if \quad   x_{ij} =1\qquad \Rightarrow \qquad \forall a | M_{ai} = 2; x_{aj} = 1
-\end{equation}
+For the computational implementation of the optimization, we used the software \textbf{GAMS} \cite{gams}. We treated the solution as a mixed integer linear programming problem (MIP). We selected the solver CBC. The results were finally exported as a text file. The code that shows the implementation of the optimizer with a basic example is available publicly in our GitHub repository at the URL  \url{https://github.com/projectsuniandes/planeadorsemestral_optimizador/blob/gams/optimizador.gms}.\\
 
-\begin{equation}
-\label{prereq}
-Prereq: if \quad   x_{ij} =1\qquad \Rightarrow \qquad \forall a | M_{ai} = 1; \sum_{k=1}^{j-1} x_{ak} = 1
-\end{equation}
+After the optimizer implementation, we created a website in which the user could insert the basic restrictions and major/minor combinations of his/her choice. For this, we created an \textbf{AngularJS} frontend that connects to a backend in \textbf{NodeJS}. In order to call the GAMS implementation, we executed it by command line and read the text file it exported. The code that shows this is also available publicly in our GitHub repository at the URL  \url{https://github.com/projectsuniandes/planeadorsemestral_back}.\\
 
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
+Finally, as for the data used in the application, we created a scrapper that goes through the courses offer website of Uniandes. We cleaned it and created a database in \textbf{PostgreSQL} that the backend calls in order to create the matrix M of the merged courses. However the information that was obtained automatically contained the information about prerequisites, corequisites and course details, but not the courses associated to each program. For this reason we had to fill the information by hand only for 6 of the majors offered at Uniandes.\\
+
+\section{Simulation}
+
+TODO...\\
+
+\section{Results}
+
+A fully functional web application was developed as part of this project. A public launch of this site was not possible under the course because of licensing problems with \textbf{GAMS}. It was released as part of the Product Design and Innovation Fair on May the 8th, at Uniandes. A short demo can be seen at the URL \url{https://www.youtube.com/watch?v=V6zJbEuhjT4}. The web app uses input from the user to calculate the recommended distribution of courses over the remaining semesters. Users can select their two majors and maximum number of credits by semester. Then they must select their taken courses, so the app can calculate the optimized remaining semesters.\\
+
+This process is iterative and can be performed at any stage of the student. It doesn't have to happen at first semester necessarily. In summary, we take some directed graphs (that represent the flow of a major) at a certain stage. We merge them and passed them through an optimizer enhanced with the technologies mentioned previously. Finally we present the academic plan. This process is represented in Fig. \ref{cycle}, where the table displays the results as seen in the web app:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/cycle}
+    \caption{Cycle}
+    \label{cycle}
+\end{figure}
+
+%The results showed by the web app can be seen in Figure \ref{fig_results}.
+%\begin{figure}[h!]
 %\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results}
-%\label{fig_sim}
+%\includegraphics[width=0.45\textwidth]{img/webapp2}
+%\caption{Screenshot of results obtained in web app}
+%\label{fig_results}
 %\end{figure}
 
-\section{Conclusion}
-There are still no conclusions for this project. \\
+\section{Conclusions and Future Work }
 
-\section*{Acknowledgment}
-The authors would like to thank the professor Yezid Donoso for his counseling in the objective function definition. \\ 
+\subsection{Conclusions}
 
-\newpage
+This project leaves the following conclusions:\\
 
-\appendices
-\section{Test Cases}
-Test case for Systems and computing engineering undergraduate program
+\begin{itemize}
+    \item We created an application that minimizes the number of semester a student needs to finish any combination of majors and minors and offer a detailed plan semester by semester of which courses to enroll in each period. \\
+    \item Using the capabilities of GAMS and the theory learned about MIP problems optimization, it was possible to make a boring and time-consuming task in a matter of seconds.\\
+    \item The course offer for each semester is not an easy task for the university because they have to estimate based on previous years what classes the students want to take. It often happens that the university need more or less courses, which translates into money loss. With this solution they could get a better estimate of the classes that students want to take. \\
+\end{itemize}
 
-\begin{figure}[h!]
-\centering\includegraphics[width=\textwidth]{img/grafo_sistemas.png}
-\caption{Systems and computing engineering graph}
-\label{grafo_sistemas}
-\end{figure}
+\subsection{Future Work}
+As for future work we have several ideas to improve our implementation of the solution. These are:\\
 
-\clearpage
-Test case for Physics undergraduate program
+\begin{itemize}
+    \item Fill the database with all the majors and minors offered by Uniandes. Specially, try to find an automatic way to do it by talking to the university.\\ 
+    \item Implement user accounts so that each student preferences are saved. \\
+    \item Implement program coordinators' accounts, so that for each program the its coordinator can update information and add specific restrictions that don't apply to the whole university.\\
+    \item Integration with next semester schedule, so users can find courses with their preferred hours. Specially, so that the application doesn't suggest combinations that cannot happen due to courses that overlap in their schedules.\\
+    \item Automatic integration of new courses, to make the application easily scalable.\\
+\end{itemize}
 
-\begin{figure}[h!]
-\centering\includegraphics[width=\textwidth]{img/grafo_fisica.png}
-\caption{Physics graph}
-\label{grafo_fisica}
+As for the final future work idea, we would like to implement this software in other universities, after finishing the user tests at Uniandes. \\
 
-\end{figure}
+\section*{Acknowledgments}
+The authors would like to thank the professor Yezid Donoso for his counseling in the objective function definition and the license to test and use non-demo solvers. Also to the teaching assistant German Montoya for his help with the GAMS implementation. \\ 
 
-\clearpage
-
-% Can use something like this to put references on a page
-% by themselves when using endfloat and the captionsoff option.
-\ifCLASSOPTIONcaptionsoff
-  \newpage
-\fi
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
+%\newpage
+%\appendices
+%\section{Test Cases}
+%Test case for Systems and computing engineering undergraduate program
+%\begin{figure}[h!]
+%\centering\includegraphics[width=\textwidth]{img/grafo_sistemas.png}
+%\caption{Systems and computing engineering graph}
+%\label{grafo_sistemas}
+%\end{figure}
+%\clearpage
+%Test case for Physics undergraduate program
+%\begin{figure}[h!]
+%\centering\includegraphics[width=\textwidth]{img/grafo_fisica.png}
+%\caption{Physics graph}
+%\label{grafo_fisica}
+%\end{figure}
+%\clearpage
 
 % can use a bibliography generated by BibTeX as a .bbl file
 % BibTeX documentation can be easily obtained at:
 % http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
 % The IEEEtran BibTeX style support page is at:
 % http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
+\bibliographystyle{IEEEtran}
+\bibliography{references}
 
 \end{document}
 
